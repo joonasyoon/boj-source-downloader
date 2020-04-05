@@ -1,3 +1,4 @@
+import os
 from selenium import webdriver
 
 APP_DIR = os.path.dirname(os.path.dirname("__filename__"))
