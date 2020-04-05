@@ -1,12 +1,12 @@
 from bs4 import BeautifulSoup
-from util import Chrome, get_text
+from util import Chrome
 
 
 def get_driver():
     args = [
         '--headless', '--no-sandbox', '--disable-dev-shm-usage', '--disable-gpu'
     ]
-    driver = Chrome().get_driver(arguments=args)
+    driver = Chrome().get_driver(options=args)
     driver.implicitly_wait(3)
     return driver
 
