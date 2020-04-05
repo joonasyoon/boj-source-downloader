@@ -14,7 +14,7 @@ def test_chrome():
     chrome_options.add_argument('--disable-dev-shm-usage')
     chrome_options.add_argument('--disable-gpu')
 
-    driver = webdriver.Chrome(_chrome_driver, chrome_options=_chrome_options)
+    driver = webdriver.Chrome(chrome_driver, options=chrome_options)
     driver.implicitly_wait(3)
     assert driver is not None
 
