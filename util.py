@@ -27,7 +27,9 @@ class Chrome:
         self._chrome_options.add_argument('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36')
         self._driver = self.create_driver()
 
-    def create_driver(self):
+    def create_driver(self, arguments=[]):
+        for arg in arguments:
+            self._chrome_options.add_argument(arg)
         driver = webdriver.Chrome(self._chrome_driver, chrome_options=self._chrome_options)
         return driver
 
