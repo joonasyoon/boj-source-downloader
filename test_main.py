@@ -3,10 +3,7 @@ from util import Chrome
 
 
 def get_driver():
-    args = [
-        '--headless', '--no-sandbox', '--disable-dev-shm-usage', '--disable-gpu'
-    ]
-    driver = Chrome().get_driver(options=args)
+    driver = Chrome(headless=True).get_driver()
     driver.implicitly_wait(3)
     return driver
 
