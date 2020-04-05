@@ -13,7 +13,7 @@ def test_chrome():
     _chrome_options.add_argument('--disable-dev-shm-usage')
     _chrome_options.add_argument('--disable-gpu')
 
-    _driver = webdriver.Chrome(self._chrome_driver, chrome_options=self._chrome_options)
+    _driver = webdriver.Chrome(_chrome_driver, chrome_options=_chrome_options)
     _driver.implicitly_wait(3)
 
     _driver.quit()
