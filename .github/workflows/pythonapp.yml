@@ -26,6 +26,11 @@ jobs:
         pip install -r requirements.txt
     - name: Setup Chromedriver
       uses: nanasess/setup-chromedriver@v1.0.1
+    - name: Download Chrome Driver (as executable file)
+      run: |
+        wget -q -O tmp.zip https://chromedriver.storage.googleapis.com/80.0.3987.106/chromedriver_linux64.zip
+        unzip tmp.zip && rm tmp.zip
+        ls . | grep chromedriver
     - name: Lint with flake8
       run: |
         pip install flake8
@@ -35,6 +40,5 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with pytest
       run: |
-        ls .
         pip install pytest
         pytest
