@@ -26,4 +26,3 @@ def test_chrome_util():
     driver = chrome.get_driver()
     assert driver is not None
     driver.quit()
-    assert driver is None
